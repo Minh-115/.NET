@@ -1,0 +1,47 @@
+﻿@model IEnumerable<crud.Models.nhanvien>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Danh sách nhân viên</h1>
+
+<p>
+    <a asp-action="Create">Thêm mới</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ten)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.vitri)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.luong)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ten)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.vitri)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.luong)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id">Sửa</a> |
+                <a asp-action="Details" asp-route-id="@item.id">Chi Tiết</a> |
+                <a asp-action="Delete" asp-route-id="@item.id">Xóa</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

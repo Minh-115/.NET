@@ -1,0 +1,36 @@
+﻿@model crud.Models.nhanvien
+
+@{
+    ViewData["Title"] = "Delete";
+}
+<h3>Xác nhận xóa?</h3>
+<div>
+    <h4>nhanvien</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ten)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ten)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.vitri)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.vitri)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.luong)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.luong)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="id" />
+        <input type="submit" value="Xóa" class="btn btn-danger" /> |
+        <a asp-action="Index">Danh sách nhân viên</a>
+    </form>
+</div>
